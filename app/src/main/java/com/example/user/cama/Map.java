@@ -14,6 +14,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -22,6 +23,8 @@ import android.widget.LinearLayout;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 public class Map extends AppCompatActivity {
     public static int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION =1;
@@ -83,9 +86,14 @@ public class Map extends AppCompatActivity {
         Drawable locationIcon = getResources().getDrawable(R.drawable.locationicon);
         userLocation.setImageDrawable(locationIcon);
 
-        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.constraintLayoutMap);
-        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.innerMapLayout);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
+//        params.height = MATCH_PARENT;
+//        params.width = MATCH_PARENT;
+//        layout.setLayoutParams(params);
+
+        params.gravity = Gravity.CENTER;
         userLocation.setLayoutParams(params);
         layout.addView(userLocation);
 

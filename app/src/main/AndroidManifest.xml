@@ -22,7 +22,12 @@
         <activity
             android:name=".Map"
             android:label="@string/title_activity_map"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName=".NewEventCreate"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.user.cama.NewEventCreate" />
+        </activity>
         <activity
             android:name=".NewEventCreate"
             android:label="@string/title_activity_new_event_create"
