@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     public void newEventClick(View view){
         Intent newEventCreate = new Intent(this, NewEventCreate.class);
         startActivity(newEventCreate);
-        Button h=new Button(this);
     }
 
     @Override

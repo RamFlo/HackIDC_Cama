@@ -64,11 +64,12 @@ public class Map extends AppCompatActivity {
                 });
         ImageButton userButton = new ImageButton(this);
 
-        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
-        String fileName = "locationIcon.jpg";
-        String pathName = baseDir + "\\images\\" + fileName;
-        Bitmap bmp = BitmapFactory.decodeFile(pathName);
-        userButton.setImageBitmap(bmp);
+//        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
+//        String fileName = "locationIcon.jpg";
+//        String pathName = "\\images\\" + fileName;
+//        Bitmap bmp = BitmapFactory.decodeFile(pathName);
+//        userButton.setImageBitmap(bmp);
+        userButton.setImageResource(R.drawable.ic_location_icon);
         LinearLayout.LayoutParams params =  new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
