@@ -23,6 +23,15 @@
             android:name=".Map"
             android:label="@string/title_activity_map"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".NewEventCreate"
+            android:label="@string/title_activity_new_event_create"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.user.cama.MainActivity" />
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
