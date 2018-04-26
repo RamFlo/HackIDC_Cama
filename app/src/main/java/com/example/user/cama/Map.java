@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -33,18 +34,18 @@ public class Map extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_map);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
         if ( ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED ) {
 
             ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
@@ -62,20 +63,24 @@ public class Map extends AppCompatActivity {
                         }
                     }
                 });
-        ImageButton userButton = new ImageButton(this);
 
 //        String baseDir = Environment.getExternalStorageDirectory().getAbsolutePath();
 //        String fileName = "locationIcon.jpg";
 //        String pathName = "\\images\\" + fileName;
 //        Bitmap bmp = BitmapFactory.decodeFile(pathName);
 //        userButton.setImageBitmap(bmp);
-        userButton.setImageResource(R.drawable.ic_location_icon);
-        LinearLayout.LayoutParams params =  new LinearLayout.LayoutParams(
+
+        /*LinearLayout.LayoutParams params =  new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+        );*/
         //params.setMargins(20,20,20,20);
+        ImageButton userButton = new ImageButton(this);
+        userButton.setImageResource(R.drawable.ic_location_icon);
+        ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.constraintLayoutMap);
+        ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
         userButton.setLayoutParams(params);
+        layout.addView(userButton);
 
 //        mLocationCallback = new LocationCallback() {
 //            @Override
