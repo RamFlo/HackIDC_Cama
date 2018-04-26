@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void newEventClick(View view){
-        Intent newEventCreate = new Intent(this, NewEventCreate.class);
-        startActivity(newEventCreate);
+        Intent intent = new Intent(MainActivity.this, NewEventCreate.class);
+        startActivity(intent);
     }
 
     @Override

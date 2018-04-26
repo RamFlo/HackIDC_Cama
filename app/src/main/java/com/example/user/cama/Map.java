@@ -3,6 +3,7 @@ package com.example.user.cama;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Environment;
@@ -15,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -75,12 +77,17 @@ public class Map extends AppCompatActivity {
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );*/
         //params.setMargins(20,20,20,20);
-        ImageButton userButton = new ImageButton(this);
-        userButton.setImageResource(R.drawable.ic_location_icon);
+//        ImageView userIcon = new ImageView(this);
+//        userIcon
+        ImageView userLocation = new ImageView(this);
+        Drawable locationIcon = getResources().getDrawable(R.drawable.locationicon);
+        userLocation.setImageDrawable(locationIcon);
+
         ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.constraintLayoutMap);
         ConstraintLayout.LayoutParams params = new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.WRAP_CONTENT, ConstraintLayout.LayoutParams.WRAP_CONTENT);
-        userButton.setLayoutParams(params);
-        layout.addView(userButton);
+
+        userLocation.setLayoutParams(params);
+        layout.addView(userLocation);
 
 //        mLocationCallback = new LocationCallback() {
 //            @Override
