@@ -92,7 +92,6 @@ public class Map extends AppCompatActivity {
 //        params.height = MATCH_PARENT;
 //        params.width = MATCH_PARENT;
 //        layout.setLayoutParams(params);
-
         params.gravity = Gravity.CENTER;
         userLocation.setLayoutParams(params);
         layout.addView(userLocation);
